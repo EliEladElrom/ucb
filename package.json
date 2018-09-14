@@ -1,0 +1,43 @@
+{
+  "name": "ucb",
+  "description": "Unlimited Consensus Blockchain",
+  "version": "0.0.1",
+  "homepage": "",
+  "author": {
+    "name": "Elad (Eli) Elrom",
+    "email": "elad.ny@gmail.com",
+    "twitter": "eliblockchain"
+  },
+  "scripts": {
+    "start": "node main.js"
+  },
+  "dependencies": {
+    "async": "^1.5.0",
+    "babel-polyfill": "^6.0.16",
+    "bin": "0.0.0",
+    "body-parser": "latest",
+    "colors": "^1.1.2",
+    "crypto-js": "latest",
+    "express": "latest",
+    "handlebars": "^4.0.4",
+    "inquirer": "^6.2.0",
+    "lodash": "^4.17.10",
+    "moment": "^2.20.1",
+    "nopt": "^3.0.4",
+    "opn": "^5.3.0",
+    "request": "^2.83.0",
+    "truncate": "^2.0.0",
+    "update-notifier": "^0.5.0",
+    "userhome": "^1.0.0",
+    "which": "^1.2.0",
+    "wordwrap": "^1.0.0",
+    "ws": "latest"
+  },
+  "devDependencies": {
+    "jshint": "^2.9.6"
+  },
+  "engines": {
+    "node": ">=10.10.0"
+  },
+  "preferGlobal": "true"
+}
