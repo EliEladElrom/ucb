@@ -18,7 +18,7 @@ nextBlock = function (blockData, consensus) {
         nextIndex = previousBlock.index + 1,
         nextTime = new Date().getTime() / 1000,
         retVal = consensus.findBlock(nextIndex, previousBlock.hash, nextTime, blockData);
-        let newBlock = new Block(retVal[0], retVal[1], retVal[2], retVal[3], retVal[4]);
+    let newBlock = new Block(retVal[0], retVal[1], retVal[2], retVal[3], retVal[4]);
     return newBlock;
 };
 

@@ -1,0 +1,12 @@
+Start P2P:
+> cli daemon --start
+
+Create a new block on the node we created:
+> cli block --create
+
+Add a node:
+> cli daemon --node
+
+Connect nodes:
+> cli node --add
+> cli node --get

@@ -35,10 +35,10 @@ Daemon.prototype.run = function() {
         options = instance.options;
 
     if (options.start) {
-        instance.runCmd('export HTTP_PORT=3001 P2P_PORT=6001 && npm start');
+        instance.runCmd('node main.js 3001 6001 min');
         instance.runCmd('open http://localhost:3001/blocks');
     } else if (options.node) {
-        instance.runCmd('export HTTP_PORT=3002 P2P_PORT=6002 NODES=ws://localhost:6001 && npm start');
+        instance.runCmd('node main.js 3002 6002 min ws://localhost:6001');
     } else if (options.stop) {
         instance.runCmd('killall node');
     }

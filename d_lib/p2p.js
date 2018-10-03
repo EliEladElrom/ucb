@@ -3,13 +3,13 @@
  * Code licensed under the BSD License:
  * @author Elad Elrom <elad.ny...gmail.com>
  */
-let WebSocket = require("ws");
-    p2p_port = process.env.P2P_PORT || 6001,
+let WebSocket = require("ws"),
+    p2p_port,
+    http_port,
     express = require("express"),
     bodyParser = require('body-parser'),
-    chain =  require("./chain.js"),
-    http_port = process.env.HTTP_PORT || 3001,
-    initialNodes = process.env.NODES ? process.env.NODES.split(',') : [],
+    chain =  require("./consensus/pow/chain.js"),
+    initialNodes,
     sockets = [],
     consensus = [];
 
@@ -22,9 +22,12 @@ let MessageType = {
     RESPONSE_BLOCKCHAIN: 2
 };
 
-setConsensusType = function (consensusType) {
+setConsensusType = function (consensusType, HTTP_PORT, P2P_PORT, NODES) {
     consensus = consensusType;
-    console.log('consensus type: ' + consensus.type);
+    http_port = HTTP_PORT;
+    p2p_port = P2P_PORT;
+    initialNodes = NODES ? NODES.split(',') : [];
+    console.log('consensus type: ' + consensus.type + ', http_port: ' + http_port + ', p2p_port: ' + p2p_port + ', initialNodes: ' + initialNodes);
 };
 
 let initHttpServer = () => {
